@@ -1,0 +1,2 @@
+class UsersCostumesController < ApplicationController
+end
