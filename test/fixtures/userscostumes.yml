@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  costume_id: 1
+  user_id: 1
+  belongs_to: 
+  belongs_to: 
+
+two:
+  costume_id: 1
+  user_id: 1
+  belongs_to: 
+  belongs_to: 
