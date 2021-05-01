@@ -1,7 +1,5 @@
 
 <----------Models--------->
-**right now I don't think I meet to many to many requirements**
-**but I think that my relationships make sense and are correct as is, so I will proceed with this for now**
 
 [x] GlobalUser 
   - attributes:
@@ -12,26 +10,37 @@
       - last_name - string
       - username - string
       - password - string
-  - relationships:
-      - has_many :costumes, through: globalusercostumes
 
 [x] Costume
   - attributes:
       - title - string
       - type - string (fullsuit, 3/4 partial, head, tail, paws, feet paws)
       - reference_sheet - string (a url of an image/image file)
-  - relationships:
-      - belongs_to :globalusers, through: :globalusercostumes
   
-[x] GlobalUserCostume (join table)
+[x] Comission (join table)
   - attributes:
       - costume_id - integer
       - globaluser_id - integer
-      - **something**
-  - relationships:
-      - belongs_to :globalusers
-      - belongs_to :costumes
+      - submitted_at - datetime
 
 
   <----------Controllers--------->
+
+[] Globalusers_controller--->
+    - handles signup functions
+    - use omniauth
+    - (connects to a user profile?)
+
+[] Sessions_controller--->
+    - handles login and log out functions
+
+[] Costumes_controller--->
+    - full MVC/CRUD actions to see 'commissioned_costumes'
+
+[] Commissions_controller--->
+    - ability to check on status(INDEX/SHOW) of costume(client)
+    - EDIT/UPDATE status(designer)
+
+
+  <----------Views--------->
 

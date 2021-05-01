@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_172748) do
+ActiveRecord::Schema.define(version: 2021_05_01_201524) do
 
   create_table "commissions", force: :cascade do |t|
     t.integer "costume_id"
     t.integer "globaluser_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.datetime "submitted_at"
+    t.string "costume_status"
   end
 
   create_table "costumes", force: :cascade do |t|
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_172748) do
     t.string "reference_sheet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "globaluser_id"
   end
 
   create_table "globalusers", force: :cascade do |t|
