@@ -8,18 +8,10 @@ class GlobalusersController < ApplicationController
   def create
   end
 
-  def update
-  end
-
-  def edit
-  end
-
-  def delete
-  end
-
   private
 
   def globaluser_params
+    params.require(:globalusers).permit(:client, :designer, :password, :email )
   end
 
 end
