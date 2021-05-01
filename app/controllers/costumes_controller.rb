@@ -1,3 +1,5 @@
+# full MVC/CRUD actions to see 'commissioned_costumes'
+
 class CostumesController < ApplicationController
   def index
     @costume = Costume.all

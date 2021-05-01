@@ -1,5 +1,7 @@
+  # sign-up and create a new user
+  # omniauth/authentications
+
 class GlobalusersController < ApplicationController
-  #sign-up and create a new user
 
   def new
     @user = Globaluser.new
