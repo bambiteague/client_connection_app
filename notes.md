@@ -11,7 +11,7 @@
       - first_name - string
       - last_name - string
       - username - string
-      - age (boolean of 18+?)
+      - password - string
   - relationships:
       - has_many :costumes, through: globalusercostumes
 

@@ -4,9 +4,11 @@ class CostumesController < ApplicationController
   end
 
   def new
+    @costume = Costume.new
   end
 
   def create
+    @costume = Costume.new(costume_params)
   end
 
   def update
@@ -21,6 +23,7 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
+    params.require(:costumes).permit(:title, :type, :reference_sheet)
   end
 
 end
