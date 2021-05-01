@@ -1,0 +1,2 @@
+class Globaluser < ApplicationRecord
+end

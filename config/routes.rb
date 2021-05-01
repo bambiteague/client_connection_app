@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  resources :userscostumes
-  resources :orders
   resources :costumes
-  resources :users
+  resources :globalusercostumes
+  resources :globalusers
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

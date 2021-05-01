@@ -1,0 +1,2 @@
+class Globalusercostume < ApplicationRecord
+end

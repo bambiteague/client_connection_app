@@ -10,26 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_181505) do
+ActiveRecord::Schema.define(version: 2021_05_01_034051) do
 
   create_table "costumes", force: :cascade do |t|
-    t.text "description"
-    t.integer "cost"
+    t.string "title"
+    t.string "type"
+    t.string "reference_sheet"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "name"
-    t.integer "age"
-    t.text "email"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "userscostumes", force: :cascade do |t|
+  create_table "globalusercostumes", force: :cascade do |t|
     t.integer "costume_id"
-    t.integer "user_id"
+    t.integer "globaluser_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "globalusers", force: :cascade do |t|
+    t.boolean "client"
+    t.boolean "designer"
+    t.text "email"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

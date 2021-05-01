@@ -1,2 +1,0 @@
-class UserCostume < ApplicationRecord
-end

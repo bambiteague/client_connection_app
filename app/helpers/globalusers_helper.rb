@@ -1,0 +1,2 @@
+module GlobalusersHelper
+end

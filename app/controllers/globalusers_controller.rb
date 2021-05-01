@@ -1,0 +1,2 @@
+class GlobalusersController < ApplicationController
+end

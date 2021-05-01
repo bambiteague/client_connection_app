@@ -1,35 +1,36 @@
 
 <----------Models--------->
+**right now I don't think I meet to many to many requirements**
+**but I think that my relationships make sense and are correct as is, so I will proceed with this for now**
 
-[] User - Designer & Client (use Aliasing)
-  - has_many :costumes, through :orders
-  - has_many :costumes
-  - belongs_to :profile (?)
-
-    attributes-->
-    - name
-    - age
-    - email   
+[] GlobalUser 
+  - attributes:
+      - client - boolean
+      - designer - boolean
+      - email - text
+      - first_name - string
+      - last_name - string
+      - username - string
+      - age (boolean of 18+?)
+  - relationships:
+      - has_many :costumes, through: globalusercostumes
 
 [] Costume
-  - belongs_to :user
-  - has_many :users, through :orders
-
-    attributes-->
-    - description
-    - cost
-
-[] Orders (join table)
-  - belongs_to :user
-  - belongs_to :costume
-
-    attributes--> 
-    - costume_id
-    - user_id
-    - (one other field)
-
-[] Profile*
-  (*is this seperation of concerns needed or excess?)
+  - attributes:
+      - title - string
+      - type - string (fullsuit, 3/4 partial, head, tail, paws, feet paws)
+      - reference_sheet - string (a url of an image/image file)
+  - relationships:
+      - belongs_to :globalusers, through: :globalusercostumes
+  
+[] GlobalUserCostume (join table)
+  - attributes:
+      - costume_id - integer
+      - globaluser_id - integer
+      - **something**
+  - relationships:
+      - belongs_to :globalusers
+      - belongs_to :costumes
 
 
   <----------Controllers--------->
