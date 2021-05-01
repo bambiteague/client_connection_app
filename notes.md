@@ -3,7 +3,7 @@
 **right now I don't think I meet to many to many requirements**
 **but I think that my relationships make sense and are correct as is, so I will proceed with this for now**
 
-[] GlobalUser 
+[x] GlobalUser 
   - attributes:
       - client - boolean
       - designer - boolean
@@ -15,7 +15,7 @@
   - relationships:
       - has_many :costumes, through: globalusercostumes
 
-[] Costume
+[x] Costume
   - attributes:
       - title - string
       - type - string (fullsuit, 3/4 partial, head, tail, paws, feet paws)
@@ -23,7 +23,7 @@
   - relationships:
       - belongs_to :globalusers, through: :globalusercostumes
   
-[] GlobalUserCostume (join table)
+[x] GlobalUserCostume (join table)
   - attributes:
       - costume_id - integer
       - globaluser_id - integer
