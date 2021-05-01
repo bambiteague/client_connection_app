@@ -1,3 +1,3 @@
 class Costume < ApplicationRecord
- belongs_to :globaluser, through: :globalusercostume
+  has_many :users_who_commissioned, through: :commissions, source: :globaluser
 end
