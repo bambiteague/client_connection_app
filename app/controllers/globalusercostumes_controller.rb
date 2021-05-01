@@ -1,2 +1,0 @@
-class GlobalusercostumesController < ApplicationController
-end

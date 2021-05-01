@@ -1,3 +1,3 @@
 class Costume < ApplicationRecord
-  belongs_to :globalusers, through: :globalusercostumes
+ belongs_to :globaluser, through: :globalusercostume
 end
