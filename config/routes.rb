@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get '/signup' => 'globalusers#new'
-  post '/singup' => 'globalusers#create'
+  post '/signup' => 'globalusers#create'
 
   resources :costumes
   resources :globalusercostumes

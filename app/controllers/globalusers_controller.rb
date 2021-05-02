@@ -8,18 +8,23 @@ class GlobalusersController < ApplicationController
   end
 
   def create
-    @user = Globaluser.new(globaluser_params)
-    #needs more
+    @user = Globaluser.new(user_params)
+    if @user.save
+      session[:globaluser_id] = @user.id
+      redirect_to :show
+    else
+      render :new
+    end
   end
 
   def show
-    
   end
 
   private
 
-  def globaluser_params
-    params.require(:globalusers).permit(:client, :designer, :email, :first_name, :last_name, :username, :password)
+  def user_params
+    params.require(:globaluser).permit(:client, :designer, :email, :username, :password)
   end
 
 end
+ 

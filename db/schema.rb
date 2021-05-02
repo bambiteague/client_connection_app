@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_01_201524) do
+ActiveRecord::Schema.define(version: 2021_05_02_122850) do
 
   create_table "commissions", force: :cascade do |t|
     t.integer "costume_id"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2021_05_01_201524) do
     t.string "username"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
+    t.string "password_digest"
   end
 
 end
