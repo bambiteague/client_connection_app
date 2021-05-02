@@ -12,6 +12,10 @@ class GlobalusersController < ApplicationController
     #needs more
   end
 
+  def show
+    
+  end
+
   private
 
   def globaluser_params
