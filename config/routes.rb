@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
+  #main page
+  root "sessions#home"
+  
+  #signup routes
   get '/signup' => 'globalusers#new'
   post '/signup' => 'globalusers#create'
+
+  #login routes
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+
+  #logout route
+  delete '/logout' => 'sessions#destroy'
 
   resources :costumes
   resources :globalusercostumes

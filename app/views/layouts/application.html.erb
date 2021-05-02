@@ -11,6 +11,20 @@
   </head>
 
   <body>
+  <!---------------NAVBAR--------------->
+  <div>
+    <%  if logged_in?%>
+      <%= link_to "Logout", logout_path, method: "delete" %>
+      <%= link_to "Commission a Costume", new_costume_path %>
+      <%= link_to "All Costumes", costumes_path %>
+     <% else %>
+      <%= link_to "Sign Up", signup_path %>
+      <%= link_to "Login", login_path %>
+    <% end %>
+  </div>
+  <!------------------------------------->
+
     <%= yield %>
+
   </body>
 </html>

@@ -1,0 +1,9 @@
+<h1>Welcome, <%= @user.username %></h1>
+
+<%# This show page is going to be like a homepage that the user is taken to after sign up OR log in activity%>
+
+<%# Consider it like a profile in the sense that I want to tailor the view to displaying information based on whether or not a globaluser is a client or a designer account %>
+
+<%= form_tag('/logout', method: 'delete') do %>
+<%= submit_tag "Logout" %>
+<% end %>

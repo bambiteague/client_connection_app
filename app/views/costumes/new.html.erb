@@ -1,0 +1,16 @@
+<h2>New Costume here</h2>
+
+<%= form_for(@costume) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+    <br>
+    <br>
+  <%= f.label :type %>
+  <%= f.text_field :type %>
+    <br>
+    <br>
+  <%= f.label :reference_sheet %>
+  <%= f.text_field :reference_sheet %>
+    <br>
+  <%= f.submit %>
+<% end %>
