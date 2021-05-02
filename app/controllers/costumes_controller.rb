@@ -10,7 +10,12 @@ class CostumesController < ApplicationController
   end
 
   def create
-    @costume = Costume.new(costume_params)
+    @costume = Commission.costume.build(costume_params)
+    if @costume.save
+      redirect_to costumes_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -25,7 +30,7 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
-    params.require(:costumes).permit(:title, :type, :reference_sheet)
+    params.require(:costume).permit(:title, :type, :reference_sheet)
   end
 
 end
