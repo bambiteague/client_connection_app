@@ -2,7 +2,11 @@
 
 class CostumesController < ApplicationController
   def index
-    @costume = Costume.all
+    if params[:globaluser_id] && @globaluser = Globaluser.find_by_id(params[:globaluser_id])
+      @costumes = @globaluser.costumes
+    else
+      flash[:message] = "That costume doesn't exist!"
+      @costumes = Costume.all
   end
 
   def new
@@ -18,10 +22,17 @@ class CostumesController < ApplicationController
     end
   end
 
-  def update
+  def show
+    @costume = Costume.find_by(id: params[:id])
   end
 
   def edit
+    @costume = Costume.find_by(id: params[:id])
+  end
+
+  def update
+    @costume = Costume.find_by(id: params[:id])
+    #needs more (if/else)
   end
 
   def delete
