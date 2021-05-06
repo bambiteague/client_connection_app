@@ -18,26 +18,18 @@ Rails.application.routes.draw do
   resources :costumes do #commissions nested under costumes
     resources :commissions, only: [:new, :create, :index]
   end
+  # costume_commissions GET '/costumes/:costume_id/commissions' commissions#index
+  #                     POST '/costumes/:costume_id/commissions' commissions#create
+  # new_costume_commissions GET '/costumes/:costume_id/commissions/new'
 
   resources :globalusers do #costumes nested under globalusers
     resources :costumes, only: [:new, :create, :index]
   end
+  # globaluser_costumes GET '/globalusers/:globaluser_id/costumes' costumes#index
+  #                     POST '/globalusers/:globaluser_id/costumes' costumes#create
+  # new_globaluser_costume GET '/globalusers/globaluser_id/costumes/new' costumes#new 
   
   resources :sessions
   resources :commissions
 
 end
-
-
-#NESTED ROUTES ------>
-# new show index
-
-# '/globalusers'
-
-# '/globalusers/:id/costumes'
-# '/globalusers/:id/commissions'
-
-# '/costumes'
-
-# '/costumes/:id/globalusers'
-# '/costumes/:id/commissions'
