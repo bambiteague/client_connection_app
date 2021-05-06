@@ -1,5 +1,7 @@
 class Globaluser < ApplicationRecord
-  has_many :commissioned_costumes, through: :commissions, source: :costume
+  has_many :commissions
+  has_many :costumes, through: :commissions
+  
   has_secure_password
 
   def is_designer?

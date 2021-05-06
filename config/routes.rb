@@ -15,13 +15,29 @@ Rails.application.routes.draw do
   #logout route
   delete '/logout' => 'sessions#destroy'
 
-  resources :costumes do
+  resources :costumes do #commissions nested under costumes
     resources :commissions, only: [:new, :create, :index]
   end
-  resources :globalusers do
+
+  resources :globalusers do #costumes nested under globalusers
     resources :costumes, only: [:new, :create, :index]
   end
+  
   resources :sessions
   resources :commissions
+
 end
 
+
+#NESTED ROUTES ------>
+# new show index
+
+# '/globalusers'
+
+# '/globalusers/:id/costumes'
+# '/globalusers/:id/commissions'
+
+# '/costumes'
+
+# '/costumes/:id/globalusers'
+# '/costumes/:id/commissions'

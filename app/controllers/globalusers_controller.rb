@@ -3,6 +3,15 @@
 
 class GlobalusersController < ApplicationController
 
+  def index
+    # if params[:costume_id] && @user = Costume.find_by_id(params[:costume_id])
+    #   @user = Costume.globalusers
+    # else
+    #   flash[:message] = "That costume doesn't appear to exit!" if params[:costume_id]
+    #   @user = Globaluser.all
+    end
+  end
+
   def new
     @user = Globaluser.new
   end
@@ -11,7 +20,7 @@ class GlobalusersController < ApplicationController
     @user = Globaluser.new(user_params)
     if @user.save
       session[:globaluser_id] = @user.id
-      # redirect to the show page
+  
       redirect_to show_path
     else
       render :new

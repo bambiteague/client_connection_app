@@ -7,6 +7,7 @@ class CostumesController < ApplicationController
     else
       flash[:message] = "That costume doesn't exist!"
       @costumes = Costume.all
+    end
   end
 
   def new
