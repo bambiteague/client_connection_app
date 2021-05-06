@@ -1,21 +1,32 @@
 <h1> Sign Up </h1>
 
-<%=  form_for(@user, url: '/signup') do |f|%>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  <br>
-  <%= f.label :email %>
-  <%= f.text_field :email, required:true %>
-  <br>
-  <br>
-  <%= f.label "Please select an account type:" %>
-  <%= f.select :client, options_for_select([["Client", @user.client], ["Designer", @user.designer]]) %>
-  <br>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-
-  <%= f.submit "Submit" %>
-<% end %>
+  <%=  form_for(@user, url: '/signup') do |f|%>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <br>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email, required:true %>
+    <br>
+    <%= f.label :email_confirmation %>
+    <%= text_field :person, :email_confirmation %>
+    <br>
+    <br>
+    <%= f.label "Please select an account type:" %>
+    <%= f.select :client, options_for_select([["Client", @user.client], ["Designer", @user.designer]]) %>
+    <br>
+    <br>
+    <%= f.label :password %><br>
+    <%= f.label "(must be 6-20 characters long)" %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "Submit" %>
+  <% end %>
+ 

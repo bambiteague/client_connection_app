@@ -2,8 +2,8 @@
 
 class CostumesController < ApplicationController
   def index
-    if params[:globaluser_id] && @globaluser = Globaluser.find_by_id(params[:globaluser_id])
-      @costumes = @globaluser.costumes
+    if params[:commission_id] && @comms = Commission.find_by_id(params[:costume_id])
+      @comms = @comms.costumes
     else
       flash[:message] = "That costume doesn't exist!"
       @costumes = Costume.all

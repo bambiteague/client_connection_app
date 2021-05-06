@@ -9,7 +9,7 @@ class GlobalusersController < ApplicationController
     # else
     #   flash[:message] = "That costume doesn't appear to exit!" if params[:costume_id]
     #   @user = Globaluser.all
-    end
+    # end
   end
 
   def new
@@ -31,8 +31,7 @@ class GlobalusersController < ApplicationController
     redirect_if_not_logged_in
     @user = Globaluser.find(params[:id ])
     # either the newly signed up globaluser being either a Client or a Designer
-    # will need validations/authentication checks
-    # can't be viewed if not logged in/the correct user
+    # will need validations
     redirect_to '/' if !@user
   end
 

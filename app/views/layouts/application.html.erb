@@ -8,17 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
 
   <body>
   <!---------------NAVBAR--------------->
   <div>
-    <%  if logged_in?%>
-      <%= link_to "Logout", logout_path, method: "delete" %>
-      <%= link_to "Commission a Costume", new_costume_path %>
+    <% if logged_in?%>
+       <%= link_to "Logout", logout_path, method: "delete" %>
+       <%= link_to "Commission a Costume", new_costume_path %>
       <%= link_to "All Costumes", costumes_path %>
-     <% else %>
-      <%= link_to "Sign Up", signup_path %>
+    <% else %>
+       <%= link_to "Sign Up", signup_path %>
       <%= link_to "Login", login_path %>
     <% end %>
   </div>
