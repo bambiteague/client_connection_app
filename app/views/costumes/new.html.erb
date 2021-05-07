@@ -1,5 +1,11 @@
 <h2>New Costume here</h2>
 
+<% if @costume.errors.full_messages.any? %>
+  <% @costume.errors.full_messages.each do |error_message| %>
+    <%= error_message if @costume.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
+
 <%= form_for(@costume) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
