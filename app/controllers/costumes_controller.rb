@@ -15,9 +15,9 @@ class CostumesController < ApplicationController
   end
 
   def create
-    @costume = Commission.costume.build(costume_params)
+    @costume = current_user.costumes.build(costume_params)
     if @costume.save
-      redirect_to costumes_path
+      redirect_to costume_path
     else
       render :new
     end
