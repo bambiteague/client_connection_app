@@ -5,9 +5,10 @@ class Globaluser < ApplicationRecord
   has_secure_password
 
   validates :email, confirmation: true
-  validates :username, presence: true
-  validates :last_name, presence: true
-  validates :password, presence: true
+  validates :email, uniqueness: {message: "Uh oh! It looks like this email address is already in use for our site! Please submit a different email address."}
+  validates :email_confirmation, presence: {message: "Please confirm your email address!"}
+  validates :username, presence: {message: "Please create a username for your account!"}
+  validates :password, presence: {message: "OOPS! Make sure you've entered a password that's 6-20 characters in length!"}
   validates :password,  length: { in: 6..20 }
 
   def is_designer?
