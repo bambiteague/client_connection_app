@@ -4,8 +4,8 @@ class Globaluser < ApplicationRecord
 
   has_secure_password
 
-  validates :email, confirmation: true
   validates :email, uniqueness: {message: "Uh oh! It looks like this email address is already in use for our site! Please submit a different email address."}
+  validates :email, confirmation: true
   validates :email_confirmation, presence: {message: "Please confirm your email address!"}
   validates :username, presence: {message: "Please create a username for your account!"}
   validates :password, presence: {message: "OOPS! Make sure you've entered a password that's 6-20 characters in length!"}

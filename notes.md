@@ -8,7 +8,7 @@
 
 [] included a ActiveRecord Scope method
     [] is that method chainable? (did you use AR query methods within it like #.where and #.order?)
-       Use these over native Ruby methods like #.find_all or #.sort
+    Use these over native Ruby methods like #.find_all or #.sort
 
 [x] app provides standard user auth. including signup, login, logout and passwords
 
@@ -18,13 +18,13 @@
     [] must include a nested new route with form that relates to the parent resource
     [] You must include a nested index or show route
 
-[] forms should correctly display validation errors
+[x] forms should correctly display validation errors
     [] fields should be enclosed within a fieldswitherrors class
-    [] error messages describing the validation failures must be present within the view
+    [x] error messages describing the validation failures must be present within the view
 
-[] DRY within reason
-    [] logic present within your controllers should be encapsulated as methods in your models
-    [] views should use helper methods and partials when appropriate
+[x] DRY within reason
+    [x] logic present within your controllers should be encapsulated as methods in your models
+    [x] views should use helper methods and partials when appropriate
 
 [x] NO Scaffolding
 
