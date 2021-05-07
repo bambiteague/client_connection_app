@@ -14,7 +14,7 @@
 
 [] Omniauth to allow login from another service ^
 
-[x] must include and make use of a nested resource with the appropriate RESTful URLs
+[] must include and make use of a nested resource with the appropriate RESTful URLs
     [] must include a nested new route with form that relates to the parent resource
     [] You must include a nested index or show route
 
