@@ -1,7 +1,11 @@
 <h2> All Costumes Commissioned</h2>
 <br>
-<br>
-<%= @costumes.all %>
+<ol>
+<% @costumes.each do |costume| %>
+  <%#maybe link-ify this later%>
+  <%= costume.title %>
+<% end %>
+</ol>
 
 
 

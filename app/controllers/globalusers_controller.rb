@@ -21,7 +21,7 @@ class GlobalusersController < ApplicationController
     if @user.save
       session[:globaluser_id] = @user.id
   
-      redirect_to show_path
+      redirect_to globaluser_path(@user)
     else
       render :new
     end

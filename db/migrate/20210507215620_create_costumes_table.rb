@@ -1,9 +1,10 @@
-class CreateCostumes < ActiveRecord::Migration[6.1]
+class CreateCostumesTable < ActiveRecord::Migration[6.1]
   def change
     create_table :costumes do |t|
       t.string :title
-      t.string :type
+      t.string :style
       t.string :reference_sheet
+      t.integer :globaluser_id
 
       t.timestamps
     end

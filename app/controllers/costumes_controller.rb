@@ -2,11 +2,12 @@
 
 class CostumesController < ApplicationController
   def index
-    if params[:commission_id] && @comms = Commission.find_by_id(params[:costume_id])
-      @comms = @comms.costumes
+    if params[:costume_id] && @costumes = Costume.find_by_id(params[:costume_id])
+      @costumes = @costumes.commissions
     else
       flash[:message] = "That costume doesn't exist!"
       @costumes = Costume.all
+    
     end
   end
 
@@ -17,7 +18,7 @@ class CostumesController < ApplicationController
   def create
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
-      redirect_to costume_path
+      redirect_to costume_path(@costume)
     else
       render :new
     end
@@ -42,7 +43,7 @@ class CostumesController < ApplicationController
   private
 
   def costume_params
-    params.require(:costume).permit(:title, :type, :reference_sheet)
+    params.require(:costume).permit(:title, :style, :reference_sheet, :globaluser_id)
   end
 
 end

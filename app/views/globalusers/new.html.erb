@@ -22,9 +22,6 @@
     <%= f.label :email %>
     <%= f.text_field :email, required:true %>
     <br>
-    <%= f.label :email_confirmation %>
-    <%= text_field :person, :email_confirmation %>
-    <br>
     <br>
     <%= f.label "Please select an account type:" %>
     <%= f.select :client, options_for_select([["Client", @user.client], ["Designer", @user.designer]]) %>
