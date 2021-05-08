@@ -18,6 +18,19 @@ class SessionsController < ApplicationController
     end
   end
 
+  def omniauth
+    #processing the response we recieved from Google and either:
+    #create a new user 
+    #or 
+    #log in an existing user
+    user = Globaluser.from_omniauth(request.env['omniauth.auth'])
+    if user.valid?
+      session[:globaluser_id] = user.id
+      redirect_to globaluser_path(user)
+    else
+      redirect_to '/login'
+    end
+  end
   
 
 end

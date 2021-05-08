@@ -21,5 +21,16 @@ class Globaluser < ApplicationRecord
     end
   end
 
+  def self.from_omniauth(response)
+    Globaluser.find_or_create_by(uid: response[:uid], provider: response[:provider]) do |u|
+      u.username = response[:info][:name]
+      u.email = response[:info][:email]
+      u.first_name = response[:info][:first_name]
+      u.last_name = response[:info][:last_name]
+      u.password = SecureRandom.hex(15)
+          # ?????!!!!!!  Am I going to need logic to allow the user to choose a client or designer account upon Google sign in? is that possible? !!!!!!???????
+    end
+  end
+
 end
  

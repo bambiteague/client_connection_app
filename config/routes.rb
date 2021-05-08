@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   #main page
   root "sessions#home"
 
+  #For Google's GET request back to us as a user attempts to sign in with Google
+  get '/auth/:provider/callback' => 'sessions#omniauth'
+
   #signup routes
   get '/signup' => 'globalusers#new'
   post '/signup' => 'globalusers#create'
