@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   # new_costume_commissions GET '/costumes/:costume_id/commissions/new'
 
   resources :globalusers do 
-    resources :costumes, only: [:new, :create, :index, :show]
+    resources :costumes, only: [:new, :create, :index, :show, :edit]
   end
   # costumes nested under globalusers------>
   # globaluser_costumes GET '/globalusers/:globaluser_id/costumes'  costumes#index

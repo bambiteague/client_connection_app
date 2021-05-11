@@ -1,11 +1,10 @@
 class CostumesController < ApplicationController
   def index
-    if current_user
-      @costumes = Costume.find_by(id: params[:globaluser_id])
-      @costumes
+    if current_user 
+      @costumes = Costume.all
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
-      redirect_to new_globaluser_costume(@costumes)
+      redirect_to globaluser_costumes(@costumes)
     end
   end
 
@@ -27,14 +26,14 @@ class CostumesController < ApplicationController
   
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
-      redirect_to costume_path(@costume)
+      redirect_to globaluser_costume_path(@costume)
     else
       render :new
     end
   end
 
   def show
-    @costume = Costume.find_by(id: params[:id])
+    @costume = Costume.last  # A solution, possibly not the best one....
   end
 
   def edit

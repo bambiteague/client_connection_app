@@ -20,7 +20,7 @@ class GlobalusersController < ApplicationController
   def show
     redirect_if_not_logged_in
     @user = Globaluser.find(params[:id ])
-      # either the newly signed up globaluser being either a Client or a Designer
+    
     redirect_to '/' if !@user
   end
 
