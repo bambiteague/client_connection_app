@@ -1,6 +1,8 @@
 # login and logout functionality
 
 class SessionsController < ApplicationController
+  helper SessionsHelper
+  
   def destroy
     session.clear
     redirect_to root_path
@@ -12,25 +14,10 @@ class SessionsController < ApplicationController
       session[:globaluser_id] = user.id
       redirect_to globaluser_path(user)
     else
-      flash[:message] = "Incorrect login information"
-      #won't want to re-render the new page with prepopulated information
+      flash.now[:message] = "Incorrect login information"
+    
       redirect_to '/login'
     end
   end
-
-  def omniauth
-    #processing the response we recieved from Google and either:
-    #create a new user 
-    #or 
-    #log in an existing user
-    user = Globaluser.from_omniauth(request.env['omniauth.auth'])
-    if user.valid?
-      session[:globaluser_id] = user.id
-      redirect_to globaluser_path(user)
-    else
-      redirect_to '/login'
-    end
-  end
-  
 
 end
