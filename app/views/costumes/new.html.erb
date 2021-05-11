@@ -1,11 +1,5 @@
 <h2>New Costume here</h2>
 
-<% if @costume.errors.full_messages.any? %>
-  <% @costume.errors.full_messages.each do |error_message| %>
-    <%= error_message if @costume.errors.full_messages.first == error_message %> <br />
-  <% end %>
-<% end %>
-
 <%= form_for(@costume) do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -13,6 +7,10 @@
     <br>
   <%= f.label :style %>
   <%= f.text_field :style %> <%#need to changed into a drop down menu%>
+    <br>
+    <br>
+  <%= f.label "Select a Designer" %>
+  <%= f.text_field :username %> <%#need to changed into a drop down menu, that only displays all of the designers available%>
     <br>
     <br>
   <%= f.label :reference_sheet %>

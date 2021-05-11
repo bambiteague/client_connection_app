@@ -3,11 +3,11 @@
 class CostumesController < ApplicationController
 
   def index
-    if params[:globaluser_id] && @costumes = Costume.find_by(params[:globaluser_id])
-      @costumes = @costumes.all
+    if @costumes = Costume.find_by(params[:globaluser_id])
+       @costumes.all
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
-      redirect_to :new_globaluser_costume
+      redirect_to new_globaluser_costume_path(@costumes)
     end
   end
 

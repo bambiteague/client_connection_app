@@ -1,0 +1,20 @@
+<h1>Update your Commission</h1>
+
+<%= form_for(@costume) do |f| %>
+  <%= f.label "New Title" %>
+  <%= f.text_field :title %>
+    <br>
+    <br>
+  <%= f.label "New Style" %>
+  <%= f.text_field :style %> <%#need to changed into a drop down menu%>
+    <br>
+    <br>
+  <%= f.label "I understand that changing the style of suit I'm requesting may incure an additional cost or a work compensation cost if you downgrade from a bigger commission request depending on your selected designer:" %>
+  <%= f.check_box("style", "acceptance", {}, "yes") %>
+    <br>
+    <br>
+  <%= f.label :reference_sheet %>
+  <%= f.text_field :reference_sheet %>
+    <br>
+  <%= f.submit %>
+<% end %>

@@ -14,8 +14,8 @@
   <div>
     <% if logged_in?%>
        <%= link_to "Logout", logout_path, method: "delete" %>
-       <%= link_to "Commission a Costume", new_globaluser_costume_path %>
-      <%= link_to "My Costumes",  globaluser_costumes_path %>
+       <%= link_to "Commission a Costume", '/globalusers/globaluser_id/costumes/new'%>
+      <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes'%>
     <% else %>
        <%= link_to "Sign Up", signup_path %>
       <%= link_to "Log in", login_path %>
