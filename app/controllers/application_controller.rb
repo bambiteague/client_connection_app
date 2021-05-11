@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @current_user ||= Globaluser.find_by_id(session[:globaluser_id]) if session[:globaluser_id]
+    @user ||= Globaluser.find(session[:globaluser_id]) if session[:globaluser_id].present?
   end
 
   def logged_in?
@@ -17,3 +17,5 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+

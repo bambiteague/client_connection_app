@@ -14,7 +14,7 @@
     <br>
     <br>
   <%=  f.label "Select a Designer", class: "control-label"%>
-  <%=  f.collection_select :globalusers, Globaluser.order(:username), :id, :username %>
+  <%=  f.collection_select :globaluser_id, @designers, :id, :username, prompt: true%>
     <br>
     <br>
   <%= f.label :reference_sheet %>

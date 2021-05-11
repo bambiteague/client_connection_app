@@ -1,7 +1,7 @@
 class CostumesController < ApplicationController
   def index
     if current_user
-      @costumes = Costume.find_by(:globaluser_id params[:globaluser_id])
+      @costumes = Costume.find_by(id: params[:globaluser_id])
       @costumes
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
@@ -10,10 +10,21 @@ class CostumesController < ApplicationController
   end
 
   def new
-    @costume = Costume.new
+    @costume = current_user.costumes.new
+    @designers = []
+    Globaluser.all.each do |user|
+      @designers << user if user.designer == true
+    end
+    @designers
   end
 
   def create
+    @designers = []
+    Globaluser.all.each do |user|
+      @designers << user if user.designer == true
+    end
+    @designers
+  
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
       redirect_to costume_path(@costume)

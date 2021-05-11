@@ -30,5 +30,5 @@ Rails.application.routes.draw do
   # costumes nested under globalusers------>
   # globaluser_costumes GET '/globalusers/:globaluser_id/costumes' costumes#index
   #                     POST '/globalusers/:globaluser_id/costumes' costumes#create
-  # new_globaluser_costume GET '/globalusers/globaluser_id/costumes/new' costumes#new 
+  # new_globaluser_costume GET '/globalusers/:globaluser_id/costumes/new' costumes#new 
 end

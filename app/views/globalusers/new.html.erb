@@ -24,7 +24,11 @@
     <br>
     <br>
     <%= f.label "Please select an account type:" %>
-    <%= f.select :globaluser, options_for_select([[CLIENT, CLIENT], [DESIGNER, DESIGNER]]) %>
+    <br>
+    <%= f.label "CLIENT" %><br>
+    <%= f.check_box :client, {}, true, false %><br>
+    <%= f.label "DESIGNER" %><br>
+    <%= f.check_box :designer, {}, true, false %>
     <br>
     <br>
     <%= f.label :password %>
