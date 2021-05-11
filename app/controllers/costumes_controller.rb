@@ -1,13 +1,11 @@
-# full MVC/CRUD actions to see 'commissioned_costumes'
-
 class CostumesController < ApplicationController
-
   def index
-    if @costumes = Costume.find_by(params[:globaluser_id])
-       @costumes.all
+    if current_user
+      @costumes = Costume.find_by(:globaluser_id params[:globaluser_id])
+      @costumes
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
-      redirect_to new_globaluser_costume_path(@costumes)
+      redirect_to new_globaluser_costume(@costumes)
     end
   end
 
@@ -38,6 +36,8 @@ class CostumesController < ApplicationController
   end
 
   def delete
+    @costume = Costume.find_by(id: params[:id])
+    @costume.destroy
   end
 
   private

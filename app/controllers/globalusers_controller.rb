@@ -1,7 +1,4 @@
 class GlobalusersController < ApplicationController
-
-  helper GlobalusersHelper
-
   def index
   end
 
