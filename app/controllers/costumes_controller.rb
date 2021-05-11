@@ -1,13 +1,13 @@
 # full MVC/CRUD actions to see 'commissioned_costumes'
 
 class CostumesController < ApplicationController
+
   def index
-    if params[:costume_id] && @costumes = Costume.find_by_id(params[:costume_id])
-      @costumes = @costumes.commissions
+    if params[:globaluser_id] && @costumes = Costume.find_by(params[:globaluser_id])
+      @costumes = @costumes.all
     else
-      flash[:message] = "That costume doesn't exist!"
-      @costumes = Costume.all
-    
+      flash.now[:message] = "You don't appear to have any costumes in progress!"
+      redirect_to :new_globaluser_costume
     end
   end
 

@@ -1,15 +1,8 @@
-
-# omniauth/authentications still needed 
-
 class GlobalusersController < ApplicationController
 
+  helper GlobalusersHelper
+
   def index
-    # if params[:costume_id] && @user = Costume.find_by_id(params[:costume_id])
-    #   @user = Costume.globalusers
-    # else
-    #   flash[:message] = "That costume doesn't appear to exit!" if params[:costume_id]
-    #   @user = Globaluser.all
-    # end
   end
 
   def new
@@ -30,8 +23,7 @@ class GlobalusersController < ApplicationController
   def show
     redirect_if_not_logged_in
     @user = Globaluser.find(params[:id ])
-    # either the newly signed up globaluser being either a Client or a Designer
-    # will need validations
+      # either the newly signed up globaluser being either a Client or a Designer
     redirect_to '/' if !@user
   end
 
