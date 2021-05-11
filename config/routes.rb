@@ -25,10 +25,11 @@ Rails.application.routes.draw do
   # new_costume_commissions GET '/costumes/:costume_id/commissions/new'
 
   resources :globalusers do 
-    resources :costumes, only: [:new, :create, :index]
+    resources :costumes, only: [:new, :create, :index, :show]
   end
   # costumes nested under globalusers------>
-  # globaluser_costumes GET '/globalusers/:globaluser_id/costumes' costumes#index
-  #                     POST '/globalusers/:globaluser_id/costumes' costumes#create
-  # new_globaluser_costume GET '/globalusers/:globaluser_id/costumes/new' costumes#new 
+  # globaluser_costumes GET '/globalusers/:globaluser_id/costumes'  costumes#index
+  # globaluser_costume GET '/globalusers/:globaluser_id/costumes/:id'  costumes#show
+  #                   POST '/globalusers/:globaluser_id/costumes'  costumes#create
+  # new_globaluser_costume GET '/globalusers/:globaluser_id/costumes/new'  costumes#new 
 end
