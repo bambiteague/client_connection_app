@@ -1,12 +1,10 @@
-<h1>I'm on my profile page!!</h2>
-
+<h1>Profile of: <%= @user.username %></h2>
 
   <% if @user.client %>
-    <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new'%> | 
-    <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes'%> | 
+    <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new' %> | 
+    <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes/:id'%> 
   <% else @designer %>
-    <%=  link_to "", '' %> |
-    <%=  link_to "", '' %> | 
+    <%=  link_to "All Commissions", ''  %>
   <% end %>
 
 <%# want designer to have links to: all commission -  their status with UPDATE abilities for status (commissions controller) %>

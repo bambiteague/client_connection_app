@@ -1,7 +1,9 @@
 class CostumesController < ApplicationController
   def index
     if current_user
-      @costumes = current_user.costumes
+      @costumes = Costume.all.each do |costumes|
+        costumes.globaluser_id == current_user
+      end
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
       redirect_to globaluser_costumes(@costumes)
@@ -18,11 +20,11 @@ class CostumesController < ApplicationController
   end
 
   def create
-    @designers = []
-    Globaluser.all.each do |user|
-      @designers << user if user.designer == true
-    end
-    @designers
+    # @designers = []
+    # Globaluser.all.each do |user|
+    #   @designers << user if user.designer == true
+    # end
+    # @designers
   
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
@@ -33,7 +35,7 @@ class CostumesController < ApplicationController
   end
 
   def show
-    @costume = Costume.last 
+    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])
   end
 
   def edit

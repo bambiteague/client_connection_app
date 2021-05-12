@@ -1,5 +1,6 @@
 <h1>Browse Through Available Designers:</h1>
-
-<ol type="A">
-<li><%= @designer.all %></li>
+<ol>
+<% @designer.map do |d| %>
+<li><%= d.username %> - <%= d.email %></li>
+<% end %>
 </ol>

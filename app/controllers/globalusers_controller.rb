@@ -1,7 +1,7 @@
 class GlobalusersController < ApplicationController
   def index
-    @designer = Globaluser.is_designer?  #NOT WORKING!!!!
-    @client = Globaluser.is_client?
+    @designer = Globaluser.designer.all #NOT WORKING!!!!
+    @client = Globaluser.client.all
   end
 
   def new

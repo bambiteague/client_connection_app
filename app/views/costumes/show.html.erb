@@ -1,9 +1,11 @@
-<%= @costume.title %>
-<div>
-  <p> <%= @costume.style %></p>
-  <p> <%= @costume.reference_sheet %></p>
-  <br>
-  <br>
-  <h2>If there any errors with your submission:</h2><br>
-  <%= link_to "Fix it!", edit_globaluser_costume_path(@costume) %>
+<% @costume.each do |c|%>
+  <%= c.title %>
+  <div>
+    <p> <%= c.style %></p>
+    <p> <%= c.reference_sheet %></p>
+    <br>
+    <h2>If there any errors with your submission:</h2><br>
+    <%= link_to "Fix it!", edit_globaluser_costume_path(c) %>
+  </div>
+<% end %>
    
