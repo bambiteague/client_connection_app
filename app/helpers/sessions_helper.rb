@@ -1,5 +1,4 @@
 module SessionsHelper
-
   def omniauth
     user = Globaluser.from_omniauth(request.env['omniauth.auth'])
     if user.valid?

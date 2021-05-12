@@ -1,7 +1,7 @@
 class CostumesController < ApplicationController
   def index
-    if current_user 
-      @costumes = Costume.all
+    if current_user
+      @costumes = current_user.costumes
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
       redirect_to globaluser_costumes(@costumes)

@@ -13,12 +13,15 @@
   <!---------------NAVBAR--------------->
   <div>
     <% if logged_in?%>
-       <%= link_to "Logout", logout_path, method: "delete" %>
-       <%= link_to "Commission a Costume", '/globalusers/globaluser_id/costumes/new'%>
+       <%= link_to "Logout", logout_path, method: "delete" %> | 
+       <%= link_to "Home", root_path %> | 
+       <%= link_to "Profile", root_path %> | 
+       <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new'%> | 
       <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes'%>
+      <%#  ^ might move to be on the profile page instead (makes more sense) %>
     <% else %>
-       <%= link_to "Sign Up", signup_path %>
-      <%= link_to "Log in", login_path %>
+       <%= link_to "Sign Up", signup_path %> |
+      <%= link_to "Log in", login_path %> 
       <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
     <% end %>
   </div>
