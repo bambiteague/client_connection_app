@@ -1,11 +1,9 @@
-<% @costume.each do |c|%>
+<h1>Here are your commissions, <%= current_user.username %>:</h1>
+<% Costume.all.each do |c|%>
   <%= c.title %>
-  <div>
     <p> <%= c.style %></p>
     <p> <%= c.reference_sheet %></p>
-    <br>
     <h2>If there any errors with your submission:</h2><br>
     <%= link_to "Fix it!", edit_globaluser_costume_path(c) %>
-  </div>
 <% end %>
    

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   resources :costumes do 
-    resources :commissions, only: [:new, :create, :index]
+    resources :commissions, only: [:edit, :update, :index]
   end
 
   resources :globalusers do 

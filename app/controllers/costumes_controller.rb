@@ -20,12 +20,6 @@ class CostumesController < ApplicationController
   end
 
   def create
-    # @designers = []
-    # Globaluser.all.each do |user|
-    #   @designers << user if user.designer == true
-    # end
-    # @designers
-  
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
       redirect_to globaluser_costume_path(@costume)
@@ -35,7 +29,6 @@ class CostumesController < ApplicationController
   end
 
   def show
-    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])
   end
 
   def edit

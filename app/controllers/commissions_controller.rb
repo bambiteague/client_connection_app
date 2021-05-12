@@ -2,4 +2,7 @@
 # EDIT/UPDATE status(designer)
 
 class CommissionsController < ApplicationController
+  def index
+
+  end
 end
