@@ -3,6 +3,6 @@
 
 class CommissionsController < ApplicationController
   def index
-
+    comms = Commission.all
   end
 end
