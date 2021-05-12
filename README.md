@@ -35,7 +35,7 @@
 
 - Credits:
   - credits to Jenn Hansen's Medium.com blog post "Google OAuth2 for Rails", detailing how to install Oauth through Google as a guide
-        `https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863`
+    `https://medium.com/@jenn.leigh.hansen/google-oauth2-for-rails-ba1bcfd1b863`
 
 - License:
     MIT © Bambi Teague
