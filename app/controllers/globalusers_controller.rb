@@ -1,5 +1,7 @@
 class GlobalusersController < ApplicationController
   def index
+    @designer = Globaluser.is_designer?
+    @client = Globaluser.is_client?
   end
 
   def new
@@ -19,13 +21,17 @@ class GlobalusersController < ApplicationController
 
   def show
     redirect_if_not_logged_in
-    @user = Globaluser.find(params[:id])
+    @user = Globaluser.find_by(id: params[:id])
     
     redirect_to '/' if !@user
   end
 
   def profile
     @user = current_user
+  end
+
+  def complete
+    @user = Globaluser.find_by(id: params[:id])
   end
 
   private
