@@ -1,5 +1,3 @@
-# login and logout functionality
-
 class SessionsController < ApplicationController
   def destroy
     session.clear
@@ -17,5 +15,4 @@ class SessionsController < ApplicationController
       redirect_to '/login'
     end
   end
-
 end

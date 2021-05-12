@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get '/profile' => 'globalusers#profile'
 
   get '/complete' => 'globalusers#complete'
+  post '/complete' => 'globalusers#complete'
 
   resources :sessions
 

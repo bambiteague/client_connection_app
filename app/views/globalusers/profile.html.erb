@@ -4,8 +4,11 @@
   <% if @user.client %>
     <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new'%> | 
     <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes'%>
+    <%= link_to "Delete Account", '/globalusers/:id', method: "delete", class: "delete_button" %>
   <% else @designer %>
     <%=  link_to "", '' %>
     <%=  link_to "", '' %>
-    <%=  link_to "", '' %>
+    <%= link_to "Delete Account", '/globalusers/:id', method: "delete", class: "delete_button" %>
   <% end %>
+
+<%# want designer to have links to: all commissions and their status with UPDATE abilities for status (commissions controller) as well as the DELETE action for commissioned costumes (would this be the same delete action from globalusers? or need new?) %>
