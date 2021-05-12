@@ -87,3 +87,5 @@ Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: )
 Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: )
 
 Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: )
+
+# Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: )

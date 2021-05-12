@@ -6,17 +6,17 @@
 
 [x] model validations to protect against bad/invalid data
 
-[] included a ActiveRecord Scope method
-    [] is that method chainable? (did you use AR query methods within it like #.where and #.order?)
+[x] included a ActiveRecord Scope method
+    [x] is that method chainable? (did you use AR query methods within it like #.where and #.order?)
     Use these over native Ruby methods like #.find_all or #.sort
 
 [x] app provides standard user auth. including signup, login, logout and passwords
 
-[] Omniauth to allow login from another service ^
+[x] Omniauth to allow login from another service ^
 
-[] must include and make use of a nested resource with the appropriate RESTful URLs
-    [] must include a nested new route with form that relates to the parent resource
-    [] You must include a nested index or show route
+[x] must include and make use of a nested resource with the appropriate RESTful URLs
+    [x] must include a nested new route with form that relates to the parent resource
+    [x] You must include a nested index or show route
 
 [x] forms should correctly display validation errors
     [] fields should be enclosed within a fieldswitherrors class
