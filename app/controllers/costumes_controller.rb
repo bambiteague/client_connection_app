@@ -50,6 +50,7 @@ class CostumesController < ApplicationController
     @costume.destroy
   end
 
+
   private
 
   def costume_params

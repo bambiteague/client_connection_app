@@ -1,0 +1,9 @@
+<h1>I'm on my profile page!!</h2>
+
+
+<div>
+  <% if @user.is_client? %>
+    <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new'%> | 
+    <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes'%>
+  <% else %>
+</div>

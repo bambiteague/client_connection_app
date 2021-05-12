@@ -19,7 +19,14 @@ class GlobalusersController < ApplicationController
 
   def show
     redirect_if_not_logged_in
-    @user = Globaluser.find(params[:id ])
+    @user = Globaluser.find(params[:id])
+    
+    redirect_to '/' if !@user
+  end
+
+  def profile
+    redirect_if_not_logged_in
+    @user = Globaluser.find_by(id: params[:id])
     
     redirect_to '/' if !@user
   end
