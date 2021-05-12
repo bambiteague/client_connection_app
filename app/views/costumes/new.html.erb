@@ -1,4 +1,10 @@
-<h2>New Costume here</h2>
+<h2>Submit a costume for commission!</h2>
+
+<% if @user.errors.full_messages.any? %>
+  <% @user.errors.full_messages.each do |error_message| %>
+    <%= error_message if @user.errors.full_messages.first == error_message %> <br />
+  <% end %>
+<% end %>
 
 <%= form_with(url: costumes_path(@costume), method: :get, local: true)  do |f| %>
   <%= f.label :title %>
