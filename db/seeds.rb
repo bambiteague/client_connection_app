@@ -65,17 +65,17 @@ Globaluser.create(username: "GreyMooseStudios", first_name: "", last_name: "", c
 
 # Costumes commissioned by clients ---->
 
-Costume.create(title: "Red", style: "", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/122426855_184842113098471_6345229058619944909_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=107&_nc_ohc=C5T9IWTCbmkAX8kRO2z&edm=AP_V10EBAAAA&ccb=7-4&oh=6bc1484f2a644034ea85607f586e2e33&oe=60C2AD90&_nc_sid=4f375e", globaluser_id: 1)
+Costume.create(title: "Red", style: "tail", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/122426855_184842113098471_6345229058619944909_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=107&_nc_ohc=C5T9IWTCbmkAX8kRO2z&edm=AP_V10EBAAAA&ccb=7-4&oh=6bc1484f2a644034ea85607f586e2e33&oe=60C2AD90&_nc_sid=4f375e", globaluser_id: 1)
 
-Costume.create(title: "Mellow pt.1", style: "", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/126777087_2779829159013386_5486781525292920783_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=102&_nc_ohc=CiTSrR4nI6YAX_LhppA&edm=AP_V10EBAAAA&ccb=7-4&oh=ab5b29472389a87a8787cd8721ac6b6a&oe=60C040C1&_nc_sid=4f375e", globaluser_id: 2)
+Costume.create(title: "Mellow pt.1", style: "hand paws", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/126777087_2779829159013386_5486781525292920783_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=102&_nc_ohc=CiTSrR4nI6YAX_LhppA&edm=AP_V10EBAAAA&ccb=7-4&oh=ab5b29472389a87a8787cd8721ac6b6a&oe=60C040C1&_nc_sid=4f375e", globaluser_id: 2)
 
-Costume.create(title: "Mellow pt.2", style: "", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/126777087_2779829159013386_5486781525292920783_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=102&_nc_ohc=CiTSrR4nI6YAX_LhppA&edm=AP_V10EBAAAA&ccb=7-4&oh=ab5b29472389a87a8787cd8721ac6b6a&oe=60C040C1&_nc_sid=4f375e", globaluser_id: 2)
+Costume.create(title: "Mellow pt.2", style: "feet paws", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/126777087_2779829159013386_5486781525292920783_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=102&_nc_ohc=CiTSrR4nI6YAX_LhppA&edm=AP_V10EBAAAA&ccb=7-4&oh=ab5b29472389a87a8787cd8721ac6b6a&oe=60C040C1&_nc_sid=4f375e", globaluser_id: 2)
 
-Costume.create(title: "Daku", style: "", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/183781861_905785203317104_6530528864015473886_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_ohc=3ZI1caYA6YMAX_hlrhE&edm=AP_V10EBAAAA&ccb=7-4&oh=6887a2bc036dfdc3724e400065132716&oe=60C1A274&_nc_sid=4f375e", globaluser_id: 3)
+Costume.create(title: "Daku", style: "fullsuit-plantigrade", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/183781861_905785203317104_6530528864015473886_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_ohc=3ZI1caYA6YMAX_hlrhE&edm=AP_V10EBAAAA&ccb=7-4&oh=6887a2bc036dfdc3724e400065132716&oe=60C1A274&_nc_sid=4f375e", globaluser_id: 3)
 
-Costume.create(title: "Pilot", style: "", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/180464611_126475366184787_5841351577333348249_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=103&_nc_ohc=EnTxKADtQz4AX-iNlFe&edm=AP_V10EBAAAA&ccb=7-4&oh=4d35dd5590651e9091c3e27b992e7ab4&oe=60C0DF52&_nc_sid=4f375e", globaluser_id: 4)
+Costume.create(title: "Pilot", style: "fullsuit-plantigrade", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/180464611_126475366184787_5841351577333348249_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=103&_nc_ohc=EnTxKADtQz4AX-iNlFe&edm=AP_V10EBAAAA&ccb=7-4&oh=4d35dd5590651e9091c3e27b992e7ab4&oe=60C0DF52&_nc_sid=4f375e", globaluser_id: 4)
 
-Costume.create(title: "Mosh", style: "", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/179810389_3995641007140619_4674894322310137204_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=111&_nc_ohc=SZFXhdTmWE0AX_-mkn1&tn=DoJRoDwZ55Bi1gG2&edm=APU89FABAAAA&ccb=7-4&oh=c1a6e37c2cfea8dd53ef6991450d55cd&oe=60C2922B&_nc_sid=86f79a", globaluser_id: 5)
+Costume.create(title: "Mosh", style: "head", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/179810389_3995641007140619_4674894322310137204_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=111&_nc_ohc=SZFXhdTmWE0AX_-mkn1&tn=DoJRoDwZ55Bi1gG2&edm=APU89FABAAAA&ccb=7-4&oh=c1a6e37c2cfea8dd53ef6991450d55cd&oe=60C2922B&_nc_sid=86f79a", globaluser_id: 5)
 
 Costume.create(title: "Lavender pt.1", style: "head", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/177338479_488416345539503_4013188873248309621_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=111&_nc_ohc=Y3l606bCacEAX-318ru&edm=AP_V10EBAAAA&ccb=7-4&oh=8fd89c896f6d0d9c9b41a9943eb74430&oe=60BFC871&_nc_sid=4f375e", globaluser_id: 6)
 
@@ -87,15 +87,15 @@ Costume.create(title: "Basil - opt tail", style: "tail", reference_sheet: "https
 
 Costume.create(title: "Blue Cat", style: "feet paws", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/174481031_134600658629704_2368677906280307800_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_ohc=sz2sEjBz3k4AX8mVN1y&edm=AP_V10EBAAAA&ccb=7-4&oh=88598b728dac99495399d664f190b58e&oe=60C1C1C4&_nc_sid=4f375e", globaluser_id: 9)
 
-Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: 10)
+Costume.create(title: "Shadow", style: "tail", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/169471472_280340453620809_7459554591599996662_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=109&_nc_ohc=xyIzIkxM0KgAX9py_ls&edm=APU89FABAAAA&ccb=7-4&oh=6b264a3a39f0063fe8ab51cd5a5bac92&oe=60C21CCD&_nc_sid=86f79a", globaluser_id: 10)
 
-Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: 11)
+Costume.create(title: "Green Hyena", style: "3/4 partial", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/165450420_371482113942839_4501283930224927757_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=111&_nc_ohc=Q0XER-xadGIAX9lTih6&edm=AP_V10EBAAAA&ccb=7-4&oh=7c0f8bf2bc0645451e337946874ad39f&oe=60BFC49A&_nc_sid=4f375e", globaluser_id: 11)
 
-Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: 12)
+Costume.create(title: "Five", style: "mini-partial", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/163996418_188598966164969_421496804776988206_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=105&_nc_ohc=FVGSxT1m5IUAX8AcDk3&edm=AP_V10EBAAAA&ccb=7-4&oh=d8a9b121e27b3fa21e069439f8518f8b&oe=60BFB7CD&_nc_sid=4f375e", globaluser_id: 12)
 
-Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: 13)
+Costume.create(title: "Tuners", style: "fullsuit-digigrade", reference_sheet: "https://scontent-dfw5-2.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/164198329_443713056884200_6972222900804869420_n.jpg?tp=1&_nc_ht=scontent-dfw5-2.cdninstagram.com&_nc_cat=104&_nc_ohc=EfH0NuENFhcAX8HHXyt&edm=AP_V10EBAAAA&ccb=7-4&oh=b33d79291e2653802704678b110d0c77&oe=60C1F1D1&_nc_sid=4f375e", globaluser_id: 13)
 
-Costume.create(title: "", style: "", reference_sheet: "", globaluser_id: 14)
+Costume.create(title: "Grey Dog", style: "3/4 partial", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c180.0.1080.1080a/s640x640/162909862_1654159068112969_6161360498361177558_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=101&_nc_ohc=QzGGA22fAScAX-1WBPc&edm=AA0rjkIBAAAA&ccb=7-4&oh=a2cd25edc950dd1f42751ed3c5c88431&oe=60C10AA7&_nc_sid=d997c6", globaluser_id: 14)
 
 Costume.create(title: "Peony pt.1", style: "head", reference_sheet: "https://scontent-dfw5-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/170408204_5524711350887187_5342202042721084667_n.jpg?tp=1&_nc_ht=scontent-dfw5-1.cdninstagram.com&_nc_cat=103&_nc_ohc=JWupsi711BMAX9sVHoL&edm=AP_V10EBAAAA&ccb=7-4&oh=0121b53b4d4af9711042551a3c64e7e3&oe=60C26A93&_nc_sid=4f375e", globaluser_id: 15)
 
