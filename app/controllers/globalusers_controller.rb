@@ -33,8 +33,7 @@ class GlobalusersController < ApplicationController
   end
 
   def destroy
-    Globaluser.find(params[:id]).destroy
-    flas[:success] = "Account successfully deleted"
+    Globaluser.destroy(1)
     redirect_to '/'
   end
 
