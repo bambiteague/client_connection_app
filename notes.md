@@ -19,7 +19,7 @@
     [x] You must include a nested index or show route
 
 [x] forms should correctly display validation errors
-    [] fields should be enclosed within a fieldswitherrors class
+    [x] fields should be enclosed within a fieldswitherrors class
     [x] error messages describing the validation failures must be present within the view
 
 [x] DRY within reason
@@ -27,51 +27,3 @@
     [x] views should use helper methods and partials when appropriate
 
 [x] NO Scaffolding
-
-
-
-<----------Models--------->
-
-[x] GlobalUser 
-  - attributes:
-      - client - boolean
-      - designer - boolean
-      - email - text
-      - first_name - string
-      - last_name - string
-      - username - string
-      - password - string
-
-[x] Costume
-  - attributes:
-      - title - string
-      - type - string (fullsuit, 3/4 partial, head, tail, paws, feet paws)
-      - reference_sheet - string (a url of an image/image file)
-  
-[x] Comission (join table)
-  - attributes:
-      - costume_id - integer
-      - globaluser_id - integer
-      - submitted_at - datetime
-
-
-  <----------Controllers--------->
-
-[] Globalusers_controller--->
-    - handles signup functions
-    - use omniauth
-    - (connects to a user profile?)
-
-[] Sessions_controller--->
-    - handles login and log out functions
-
-[] Costumes_controller--->
-    - full MVC/CRUD actions 
-
-[] Commissions_controller--->
-    - ability to check on status(INDEX/SHOW) of costume(client)
-    - EDIT/UPDATE status(designer)
-
-
-  <------------------------------>
-

@@ -33,7 +33,7 @@ class CostumesController < ApplicationController
   end
 
   def show
-    @costume = Costume.last  # A solution, possibly not the best one....
+    @costume = Costume.last 
   end
 
   def edit
@@ -42,7 +42,6 @@ class CostumesController < ApplicationController
 
   def update
     @costume = Costume.find_by(id: params[:id])
-    #needs more (if/else)
   end
 
   def delete
