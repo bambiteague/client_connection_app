@@ -1,9 +1,7 @@
 class CostumesController < ApplicationController
   def index
     if current_user
-      @costumes = Costume.all.each do |costumes|
-        costumes.globaluser_id == current_user
-      end
+      @costumes.globaluser_id = session[:globaluser_id]
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
       redirect_to globaluser_costumes(@costumes)

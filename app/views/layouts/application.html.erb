@@ -3,29 +3,20 @@
 <html>
   <head>
     <title>ClientConnectionApp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-  <body>
-  <!---------------NAVBAR--------------->
-  <div>
-    <% if logged_in?%>
-      <%= link_to "Logout", logout_path, method: "delete" %> | 
-      <%= link_to "Home", root_path %> | 
-      <%= link_to "Profile",  profile_path %> 
-    <% else %>
-      <%= link_to "Designers", globalusers_path %> | 
-      <%= link_to "Sign Up", signup_path %> |
-      <%= link_to "Log in", login_path %> 
-      <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
-    <% end %>
-  </div>
+    </head>
+    <body>
+    <!---------------NAVBAR--------------->
+              <% if logged_in?%>
+                <%= link_to "Logout", logout_path, method: "delete" %> | 
+                <%= link_to "Home", root_path %> | 
+                <%= link_to "Profile",  profile_path %> 
+              <% else %>
+                <%= link_to "Designers", globalusers_path %> | 
+                <%= link_to "Sign Up", signup_path %> |
+                <%= link_to "Log in", login_path %> 
+                <%= button_to "Log in with Google", '/auth/google_oauth2'  %>
+              <% end %>
   <!------------------------------------->
-
   <div>
   <br>
     <% if flash[:message] %>

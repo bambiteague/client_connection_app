@@ -1,5 +1,3 @@
-# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
 Rails.application.routes.draw do
  
   root "sessions#home"
@@ -12,6 +10,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
+  get '/logout' => 'sessions#destroy'
   delete '/logout' => 'sessions#destroy'
 
   get '/profile' => 'globalusers#profile'
