@@ -1,9 +1,15 @@
+<%# These are the running commissions of the DESIGNER %>
+
 <h2> Here are your running commissions, <%= current_user.username %>:</h2>
 <ol>
 <% @costumes.each do |costume| %>
   <%= costume.title %>
+  <%# need to make a link_to edit status of commission next to each entry%>
 <% end %>
 </ol>
+
+
+
 
 
 

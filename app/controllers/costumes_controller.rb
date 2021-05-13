@@ -1,32 +1,34 @@
 class CostumesController < ApplicationController
   def index
-    if current_user
-      @costumes.globaluser_id = session[:globaluser_id]
+    if session[:globaluser_id] && current_user && current_user.costumes.any?
+      @costumes = current_user.costumes
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
-      redirect_to globaluser_costumes(@costumes)
-    end
+      redirect_to profile_path(@user) 
+   end 
   end
 
   def new
-    @costume = current_user.costumes.new
-    @designers = []
-    Globaluser.all.each do |user|
-      @designers << user if user.designer == true
-    end
-    @designers
+    @user = current_user
+    @designers = Globaluser.designer.all
   end
 
   def create
     @costume = current_user.costumes.build(costume_params)
     if @costume.save
-      redirect_to globaluser_costume_path(@costume)
+      redirect_to globaluser_costume_path(@costume, @user)
     else
+      falsh.now[:message] = "oops that didn't save!"
       render :new
     end
   end
 
   def show
+    @user = Globaluser.find_by_id(params[:id])
+    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])
+    # binding.pry
+    redirect_to globaluser_costume_path(@user, @costume)
+ 
   end
 
   def edit

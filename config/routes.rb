@@ -20,7 +20,7 @@ Rails.application.routes.draw do
 
   resources :sessions
 
-  resources :costumes do 
+  resources :globalusers do 
     resources :commissions, only: [:edit, :update, :index]
   end
 

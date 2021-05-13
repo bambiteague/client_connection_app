@@ -1,6 +1,6 @@
 class GlobalusersController < ApplicationController
   def index
-    @designer = Globaluser.designer.all #NOT WORKING!!!!
+    @designer = Globaluser.designer.all 
     @client = Globaluser.client.all
   end
 
@@ -12,7 +12,7 @@ class GlobalusersController < ApplicationController
     @user = Globaluser.new(user_params)
     if @user.save
       session[:globaluser_id] = @user.id
-      redirect_to globaluser_path(@user)
+      redirect_to profile_path
     else
       render :new
     end
@@ -26,16 +26,18 @@ class GlobalusersController < ApplicationController
 
   def profile
     @user = current_user
+    @costumes = @user.costumes
+    @commissions = @user.commissions
   end
 
   def complete
     @user = Globaluser.find_by(id: params[:id])
   end
 
-  def destroy
-    Globaluser.destroy(1)
-    redirect_to '/'
-  end
+  # def destroy
+  #   Globaluser.destroy(1)
+  #   redirect_to '/'
+  # end
 
   private
 

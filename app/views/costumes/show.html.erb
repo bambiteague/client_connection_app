@@ -1,4 +1,8 @@
+<%# This should be all the commissions submitted by the CLIENT %>
+<%# OR this page should display the error that they don't have any commissioned costumes%>
+
 <h1>Here are your commissions, <%= current_user.username %>:</h1>
+
 <% Costume.all.each do |c|%>
   <%= c.title %>
     <p> <%= c.style %></p>

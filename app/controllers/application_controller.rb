@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    @user ||= Globaluser.find(session[:globaluser_id]) if session[:globaluser_id].present?
+    @current_user ||= Globaluser.find(session[:globaluser_id]) if session[:globaluser_id]
   end
 
   def logged_in?

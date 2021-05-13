@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = Globaluser.find_by(username: params[:globaluser][:username])
     if user && user.authenticate(params[:globaluser][:password])
       session[:globaluser_id] = user.id
-      redirect_to profile_path(user)
+      redirect_to profile_path
     else
       flash[:message] = "Incorrect login information" 
       redirect_to '/login'
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     user = Globaluser.from_omniauth(request.env['omniauth.auth'])
     if user.valid?
       session[:globaluser_id] = user.id
-      redirect_to profile_path(user)
+      redirect_to complete_path
     else
       redirect_to '/login'
     end

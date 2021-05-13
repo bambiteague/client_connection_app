@@ -1,12 +1,6 @@
 <h2>Submit a costume for commission!</h2>
 
-<% if @user.errors.full_messages.any? %>
-  <% @user.errors.full_messages.each do |error_message| %>
-    <%= error_message if @user.errors.full_messages.first == error_message %> <br />
-  <% end %>
-<% end %>
-
-<%= form_with(url: costumes_path(@costume), method: :get, local: true)  do |f| %>
+<%= form_with(url: new_globaluser_costume_path(@user), method: :get, local: true)  do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
     <br>

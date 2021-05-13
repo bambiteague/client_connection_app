@@ -1,10 +1,11 @@
+
 <h1>Profile of: <%= @user.username %></h2>
 
   <% if @user.client %>
-    <%= link_to "Commission", '/globalusers/globaluser_id/costumes/new' %> | 
-    <%= link_to "My Costumes", '/globalusers/:globaluser_id/costumes/:id'%> 
+    <%= link_to "Commission", new_globaluser_costume_path(@user) %> | 
+    <%= link_to "My Costumes", globaluser_costume_path(@user, @costumes) %> 
   <% else @designer %>
-    <%=  link_to "All Commissions", '/costumes/:costume_id/commissions'  %>
+    <%=  link_to "All Commissions",globaluser_commissions_path(@user, @commissions)  %>
   <% end %>
 
 <%# want designer to have links to: all commission -  their status with UPDATE abilities for status (commissions controller) %>
