@@ -27,5 +27,5 @@ Rails.application.routes.draw do
   resources :globalusers do 
     resources :costumes, only: [:new, :create, :index, :show, :edit]
   end
-
+  resources :costumes
 end

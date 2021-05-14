@@ -10,29 +10,38 @@ class CostumesController < ApplicationController
 
   def new
     @user = current_user
-    @designers = Globaluser.designer.all
+    @designers = Globaluser.designer
+    @costume = Costume.new
   end
 
   def create
-    @costume = current_user.costumes.build(costume_params)
-    if @costume.save
-      redirect_to globaluser_costume_path(@costume, @user)
-    else
-      falsh.now[:message] = "oops that didn't save!"
-      render :new
+    # binding.pry
+    if logged_in?
+      @costume =current_user.costumes.build(costume_params)
+      @user = params[:globaluser_id]
+      @costume.save
+      current_user.costumes << @costume
+      if  @costume.save
+        redirect_to globaluser_costume_path(@user, @costume)
+      else
+        flash.now[:message] = "oops that didn't save!"
+        render :new
+      end
+    else 
+      @costume = Costume.new(costume_params)
     end
   end
 
   def show
-    @user = Globaluser.find_by_id(params[:id])
-    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])
+    @user = current_user
+    @costume = Costume.find_by_id(params[:id])
     # binding.pry
     redirect_to globaluser_costume_path(@user, @costume)
- 
   end
 
   def edit
-    @costume = Costume.find_by(id: params[:id])
+    # binding.pry
+    @costume = Costume.find_by_id(id: params[:id])
   end
 
   def update

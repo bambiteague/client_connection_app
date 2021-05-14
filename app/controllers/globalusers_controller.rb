@@ -26,6 +26,7 @@ class GlobalusersController < ApplicationController
 
   def profile
     @user = current_user
+    @costume = Costume.new
     @costumes = @user.costumes
     @commissions = @user.commissions
   end
