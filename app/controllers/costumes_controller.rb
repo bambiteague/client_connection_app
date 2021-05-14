@@ -2,10 +2,8 @@ class CostumesController < ApplicationController
   def index
     if logged_in?
       @user = current_user
-      @user_costumes = current_user.costumes
-      @costume = Costume.all.each do |costume|
-        costume.id
-      end
+      @user_costumes = @user.costumes
+      @costumes = @user_costumes.ids   #grabs just that user's costume ids for :id params needed (huzzah!)
    end 
   end
 
@@ -32,24 +30,27 @@ class CostumesController < ApplicationController
     end
   end
 
-  # def show
-  #   @user = current_user
-  #   @costume = Costume.find_by_id(params[:id])
-  #   redirect_to globaluser_costume_path(@user, @costume)
-  # end
+  def show
+    @user = current_user
+    @costume = Costume.find_by_id(params[:id])
+  end
 
   def edit
-    if current_user == params[:globaluser_id]
-      @costume = current_user.costumes
+    if logged_in?
+      @current_user_costumes = current_user.costumes
+      @costume = @current_user_costumes.find_by_id(params[:id])  
     end
   end
 
   def update
-    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])  # <----not working, going straight to the else, 
-                           # but :edit isn't loading properly because this @costume, is different than the one set in the edit
-    if @costume.update(comment_params)
-      redirect_to globaluser_costumes_path(@costume)
+    if logged_in?
+      @current_user_costumes = current_user.costumes
+      @costume = @current_user_costumes.find_by_id(params[:id])  
+    end
+    if @costume.update(costume_params)
+      redirect_to globaluser_costume_path(@costume)  
     else
+      flash.now[:message] = "Doesn't appear to have updated your costume"
       render :edit
     end
   end

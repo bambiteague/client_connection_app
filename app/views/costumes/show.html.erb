@@ -1,4 +1,10 @@
-<%# This should be all the commissions submitted by the CLIENT %>
-<%# OR this page should display the error that they don't have any commissioned costumes%>
 
-<h1>global user costume show page</h1>
+
+<h1><%= @user.username %>, your commissioned costume has been updated successfully</h1>
+<h2>!! Check your email, as your designer may need to work out new costs with you !!</h2>
+<h2>________________________________________________________</h2>
+  <p><b>Title:</b> <%= @costume.title %>
+  <p><b>Style:</b> <%= @costume.style %></p>
+  <p><b>Reference sheet can be found at:</b><br><%= @costume.reference_sheet %></p><br>
+  <%= link_to "Back to Profile", profile_path %>
+  <h2>________________________________________________________</h2><br>
