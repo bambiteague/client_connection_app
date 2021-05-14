@@ -1,10 +1,18 @@
-# ability to check on status(INDEX/SHOW) of costume(client)
-# EDIT/UPDATE status(designer)
 
 class CommissionsController < ApplicationController
   def index
-    @user = Globaluser.find(params[:globaluser_id])   
+    if logged_in?
+      @user = current_user
+    end
     @commissions = @user.commissions 
+  end
+
+  def edit
+
+  end
+
+  def update
+
   end
 
 end
