@@ -3,7 +3,7 @@ class CostumesController < ApplicationController
     if logged_in?
       @user = current_user
       @user_costumes = @user.costumes
-      @costumes = @user_costumes.ids   #grabs just that user's costume ids for :id params needed (huzzah!)
+      @costume = @user_costumes.ids   #grabs just that user's costume ids for :id params needed (huzzah!)
    end 
   end
 
@@ -55,9 +55,13 @@ class CostumesController < ApplicationController
     end
   end
 
-  def delete
-    @costume = Costume.find_by(id: params[:id])
+  def destroy
+    if logged_in?
+      @current_user_costumes = current_user.costumes
+      @costume = @current_user_costumes.find_by_id(params[:id])  
+    end
     @costume.destroy
+    redirect_to globaluser_costumes_path(@current_user_costumes)
   end
 
 
@@ -66,5 +70,12 @@ class CostumesController < ApplicationController
   def costume_params
     params.require(:costume).permit(:title, :style, :reference_sheet, :globaluser_id)
   end
+
+  # def find_current_user_costumes
+  #   if logged_in?
+  #     @current_user_costumes = current_user.costumes
+  #     @costume = @current_user_costumes.find_by_id(params[:id])     <---code broke when I tried using it by method name from here..??
+  #   end
+  # end
 
 end
