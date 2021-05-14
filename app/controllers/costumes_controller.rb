@@ -1,7 +1,11 @@
 class CostumesController < ApplicationController
   def index
     if logged_in?
+      @user = current_user
       @user_costumes = current_user.costumes
+      @costume = Costume.all.each do |costume|
+        costume.id
+      end
    end 
   end
 
@@ -13,7 +17,7 @@ class CostumesController < ApplicationController
 
   def create
     if logged_in?
-      @costume =current_user.costumes.build(costume_params)   # <---working, but dirty, non dry code...oi
+      @costume =current_user.costumes.build(costume_params)   # <---This method is working, but is gross, non dry code...oi
       @user = params[:globaluser_id]                          # come back to last / refactor
       @costume.save
       current_user.costumes << @costume

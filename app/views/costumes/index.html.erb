@@ -5,8 +5,9 @@
 <% @user_costumes.each do |c|%>
   <p><b>Title:</b> <%= c.title %>
   <p><b>Style:</b> <%= c.style %></p>
-  <p><b>Reference sheet can be found at:</b><br><%= c.reference_sheet %></p>
-  <h2>________________________________________________________</h2><br><br>
+  <p><b>Reference sheet can be found at:</b><br><%= c.reference_sheet %></p><br>
+  <%= link_to "Update Here!", edit_globaluser_costume_path(@user, @costume) %>
+  <h2>________________________________________________________</h2><br>
 <% end %>
 
 
