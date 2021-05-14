@@ -1,13 +1,12 @@
 <%# These are the running commissions of the DESIGNER %>
 
-<h1>Here are your commissions, <%= current_user.username %>:</h1>
-
-<% @costume.each do |c|%>
-  <%= c.title %>
-    <p> <%= c.style %></p>
-    <p> <%= c.reference_sheet %></p>
-    <h2>If there any errors with your submission:</h2><br>
-    <%= link_to "Fix it!", edit_globaluser_costume_path(c) %>
+<h1>Here are your commissions, <%= current_user.username %>:</h1><br>
+<h2>________________________________________________________</h2>
+<% @user_costumes.each do |c|%>
+  <p><b>Title:</b> <%= c.title %>
+  <p><b>Style:</b> <%= c.style %></p>
+  <p><b>Reference sheet can be found at:</b><br><%= c.reference_sheet %></p>
+  <h2>________________________________________________________</h2><br><br>
 <% end %>
 
 

@@ -1,11 +1,7 @@
 class CostumesController < ApplicationController
   def index
     if logged_in?
-      # binding.pry
-      @costumes = current_user.costumes
-      @costume = costume.id
-    else
-      flash.now[:message] = "You don't appear to have any costumes in progress!"
+      @user_costumes = current_user.costumes
    end 
   end
 
@@ -16,14 +12,13 @@ class CostumesController < ApplicationController
   end
 
   def create
-    # binding.pry
     if logged_in?
-      @costume =current_user.costumes.build(costume_params)   # <---working, dirty, non dry code, oi ??
-      @user = params[:globaluser_id]
+      @costume =current_user.costumes.build(costume_params)   # <---working, but dirty, non dry code...oi
+      @user = params[:globaluser_id]                          # come back to last / refactor
       @costume.save
       current_user.costumes << @costume
       if  @costume.save
-        redirect_to globaluser_costume_path(@user, @costume)
+        redirect_to globaluser_costumes_path(@user, @costume)
       else
         flash.now[:message] = "oops that didn't save!"
         render :new
@@ -33,15 +28,13 @@ class CostumesController < ApplicationController
     end
   end
 
-  def show
-    @user = current_user
-    @costume = Costume.find_by_id(params[:id])
-    # binding.pry
-    redirect_to globaluser_costume_path(@user, @costume)
-  end
+  # def show
+  #   @user = current_user
+  #   @costume = Costume.find_by_id(params[:id])
+  #   redirect_to globaluser_costume_path(@user, @costume)
+  # end
 
   def edit
-    # binding.pry
     @costume = Costume.find_by_id(id: params[:id])
   end
 
