@@ -1,10 +1,11 @@
 class CostumesController < ApplicationController
   def index
-    if session[:globaluser_id] && current_user && current_user.costumes.any?
+    if logged_in?
+      # binding.pry
       @costumes = current_user.costumes
+      @costume = costume.id
     else
       flash.now[:message] = "You don't appear to have any costumes in progress!"
-      redirect_to profile_path(@user) 
    end 
   end
 
@@ -17,7 +18,7 @@ class CostumesController < ApplicationController
   def create
     # binding.pry
     if logged_in?
-      @costume =current_user.costumes.build(costume_params)
+      @costume =current_user.costumes.build(costume_params)   # <---working, dirty, non dry code, oi ??
       @user = params[:globaluser_id]
       @costume.save
       current_user.costumes << @costume

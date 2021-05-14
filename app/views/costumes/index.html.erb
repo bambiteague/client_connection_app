@@ -1,12 +1,14 @@
 <%# These are the running commissions of the DESIGNER %>
 
-<h2> Here are your running commissions, <%= current_user.username %>:</h2>
-<ol>
-<% @costumes.each do |costume| %>
-  <%= link_to costume.title, globaluser_costume_path(current_user, costume) %>
-<% end %>
-</ol>
+<h1>Here are your commissions, <%= current_user.username %>:</h1>
 
+<% @costume.each do |c|%>
+  <%= c.title %>
+    <p> <%= c.style %></p>
+    <p> <%= c.reference_sheet %></p>
+    <h2>If there any errors with your submission:</h2><br>
+    <%= link_to "Fix it!", edit_globaluser_costume_path(c) %>
+<% end %>
 
 
 
