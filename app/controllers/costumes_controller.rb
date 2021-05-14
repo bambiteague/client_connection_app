@@ -39,11 +39,19 @@ class CostumesController < ApplicationController
   # end
 
   def edit
-    @costume = Costume.find_by_id(id: params[:id])
+    if current_user == params[:globaluser_id]
+      @costume = current_user.costumes
+    end
   end
 
   def update
-    @costume = Costume.find_by(id: params[:id])
+    @costume = Costume.find_by(globaluser_id: params[:globaluser_id])  # <----not working, going straight to the else, 
+                           # but :edit isn't loading properly because this @costume, is different than the one set in the edit
+    if @costume.update(comment_params)
+      redirect_to globaluser_costumes_path(@costume)
+    else
+      render :edit
+    end
   end
 
   def delete
